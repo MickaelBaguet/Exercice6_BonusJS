@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Exercice 6</title>
+</head>
+<body>
+
+  <div class="container-fluid text-center">
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-3">Exercice 6 - Partie Bonus</h1>
+      <p class="lead">Compter et afficher le nombre de "b".</p>
+    </div>
+  </div>
+  <h2>Phrase à tester :</h2>
+  <p id="text">"Betty Botter bought a bit of butter, the butter Betty Botter bought was a bit bitter, and made her batter bitter. But a bit of better butter makes better batter. So Betty Botter bought a bit of better butter. Making Betty Botter's bitter batter better."</p>
+  <!-- Ajout d'une balise span vide afin d'afficher le résultat de la fonction -->
+  <p>Nombre de b dans le document : <span id="nombre"></span></p>
+  </div>
+
+  <script>
+    // On prends le texte du <p> dans une variable
+    var text = document.getElementById('text').innerText
+    // On mets le tout en minuscule pour facilité le test
+    var lowerCase = text.toLowerCase();
+    // On divise le tout dans un tableau, caractère par caractère
+    var tableauText = lowerCase.split('');
+    // On initialise un compteur
+    var compteur = 0;
+    // On parcours le tableau contenant le texte
+    for (var i = 0; i < tableauText.length; i++) {
+      // Si le caractère du tableau est égale à 'b'
+      if (tableauText[i] == 'b') {
+        // On incrémente le compteur
+        compteur++;
+      }
+    }
+    // console.log(compteur);
+    // Puis on affiche la valeur du compteur dans le span qui était vide
+    document.getElementById('nombre').innerHTML = compteur;
+  </script>
+
+</body>
+</html>
